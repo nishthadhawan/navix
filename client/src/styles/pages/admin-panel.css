@@ -1,0 +1,533 @@
+/* ============================================================
+   NaviX — Admin Panel Page
+   ============================================================ */
+
+.admin-page {
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.admin-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 24px;
+    position: relative;
+    z-index: 1;
+}
+
+.admin-nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.admin-nav-icon {
+    font-size: 1.6rem;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 12px;
+}
+
+.admin-nav-title {
+    font-size: 1.2rem;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.admin-nav-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 1px;
+}
+
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px 40px;
+    position: relative;
+    z-index: 1;
+}
+
+.admin-back-btn {
+    padding: 8px 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    border: 1px solid var(--border-glass);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.admin-back-btn:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.3);
+    color: var(--accent-cyan);
+}
+
+.admin-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.admin-stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-md);
+    padding: 22px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transition: all 0.2s;
+}
+
+.admin-stat-card:hover {
+    border-color: rgba(59, 130, 246, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.admin-stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+.admin-stat-data {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.admin-stat-value {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--accent-cyan);
+}
+
+.admin-stat-label {
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.admin-table-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+.admin-table-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.admin-table-header h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.admin-table-count {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.04);
+    padding: 4px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.admin-table-wrap {
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.86rem;
+}
+
+.admin-table thead {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.admin-table th {
+    padding: 14px 16px;
+    text-align: left;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    border-bottom: 1px solid var(--border-glass);
+}
+
+.admin-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    color: var(--text-primary);
+    vertical-align: middle;
+}
+
+.admin-table tbody tr {
+    transition: background 0.15s;
+}
+
+.admin-table tbody tr:hover {
+    background: rgba(59, 130, 246, 0.04);
+}
+
+.admin-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.admin-td-num {
+    color: var(--text-muted);
+    font-weight: 700;
+    width: 40px;
+    font-size: 0.82rem;
+}
+
+.admin-td-datetime {
+    white-space: nowrap;
+}
+
+.admin-date {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.admin-time {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.admin-td-stars {
+    color: #fbbf24;
+    letter-spacing: 1px;
+    font-size: 0.82rem;
+    white-space: nowrap;
+}
+
+.admin-td-comment {
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+}
+
+.admin-td-route {
+    min-width: 200px;
+}
+
+.admin-route-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 4px 0;
+}
+
+.admin-route-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.admin-route-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 4px;
+    border: 2px solid;
+}
+
+.admin-dot-start {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: #10b981;
+}
+
+.admin-dot-end {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: #3b82f6;
+}
+
+.admin-route-line {
+    width: 2px;
+    height: 14px;
+    background: repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.12) 0px, rgba(255, 255, 255, 0.12) 3px, transparent 3px, transparent 6px);
+    margin-left: 4px;
+}
+
+.admin-route-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.admin-route-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}
+
+.admin-route-coord {
+    font-size: 0.66rem;
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    margin-top: 1px;
+}
+
+.admin-route-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 180px;
+}
+
+.admin-route-from,
+.admin-route-to {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+.admin-route-arrow {
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    padding-left: 6px;
+}
+
+.admin-loading,
+.admin-empty,
+.admin-error {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--text-secondary);
+}
+
+.admin-error {
+    color: var(--accent-red);
+}
+
+/* ============================================================
+   Tabs
+   ============================================================ */
+.admin-tabs {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-md);
+    padding: 5px;
+    width: fit-content;
+}
+
+.admin-tab {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: transparent;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.admin-tab:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.admin-tab--active {
+    color: var(--accent-cyan);
+    background: rgba(59, 130, 246, 0.1);
+    box-shadow: 0 1px 6px rgba(59, 130, 246, 0.12);
+}
+
+/* ============================================================
+   User Table Cells
+   ============================================================ */
+.admin-user-cell {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-user-avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: #fff;
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    flex-shrink: 0;
+    text-transform: uppercase;
+}
+
+.admin-user-name {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* ── Paths Badge ── */
+.admin-paths-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 12px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--accent-cyan);
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    border-radius: 10px;
+}
+
+.admin-paths-max {
+    font-weight: 500;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+
+/* ── Usage Bar ── */
+.admin-usage-bar-wrap {
+    width: 100%;
+    max-width: 120px;
+    height: 7px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+}
+
+.admin-usage-bar {
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #6366f1, #ec4899);
+    transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    min-width: 4px;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 1100px) {
+    .admin-stats {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
+
+@media (max-width: 900px) {
+    .admin-stats {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .admin-nav {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 550px) {
+    .admin-stats {
+        grid-template-columns: 1fr !important;
+    }
+
+    .admin-tabs {
+        width: 100%;
+    }
+
+    .admin-tab {
+        flex: 1;
+        justify-content: center;
+    }
+}
+
+/* ============================================================
+   Light Theme Overrides – Admin Panel
+   ============================================================ */
+[data-theme="light"] .admin-back-btn {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .admin-table-count {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .admin-table thead {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="light"] .admin-table td {
+    border-bottom-color: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .admin-route-line {
+    background: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 0px, rgba(0, 0, 0, 0.12) 3px, transparent 3px, transparent 6px);
+}
+
+[data-theme="light"] .admin-tab:hover {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .admin-tab--active {
+    background: rgba(59, 130, 246, 0.08);
+}
+
+[data-theme="light"] .admin-usage-bar-wrap {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .admin-tabs {
+    border-color: rgba(0, 0, 0, 0.08);
+}

@@ -1,0 +1,42 @@
+/* ============================================================
+   NaviX — Master Stylesheet
+   All styles are organized into modular files.
+   Import this single file to get the complete design system.
+   ============================================================ */
+
+/* ── Core ── */
+@import './variables.css';
+@import './base.css';
+@import './animations.css';
+@import './layout.css';
+
+/* ── Components ── */
+@import './components/glass-card.css';
+@import './components/forms.css';
+@import './components/nearby.css';
+@import './components/feedback.css';
+@import './components/loading.css';
+@import './components/modal.css';
+@import './components/errors.css';
+@import './components/developer-card.css';
+@import './components/navix-chat.css';
+@import './components/theme-toggle.css';
+@import './components/saved-paths.css';
+@import './components/pwa-prompt.css';
+@import './components/skeleton.css';
+
+/* ── Map ── */
+@import './leaflet-overrides.css';
+
+/* ── Pages ── */
+@import './pages/route-page.css';
+@import './pages/directions-panel.css';
+@import './pages/intro-page.css';
+@import './pages/admin-panel.css';
+@import './pages/safety-dashboard.css';
+@import './pages/auth-page.css';
+@import './pages/user-panel.css';
+@import './pages/creator-page.css';
+@import './pages/track-page.css';
+@import './pages/emergency-page.css';
+@import './pages/profile-page.css';

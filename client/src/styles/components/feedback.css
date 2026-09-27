@@ -1,0 +1,482 @@
+/* ============================================================
+   NaviX — Feedback Form Components
+   ============================================================ */
+
+/* ── Feedback Wrapper (Home Page) ── */
+.feedback-wrapper {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.feedback-section {
+    text-align: center;
+}
+
+.feedback-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.star-rating {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+}
+
+.star-btn {
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: all 0.15s ease;
+    padding: 2px;
+    line-height: 1;
+}
+
+.star-btn.active {
+    color: var(--accent-amber);
+    transform: scale(1.15);
+    text-shadow: 0 0 16px rgba(251, 191, 36, 0.5);
+}
+
+.star-btn:hover {
+    transform: scale(1.2);
+}
+
+.ratings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.rating-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rating-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.star-label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-left: 8px;
+    min-width: 70px;
+    text-align: right;
+}
+
+.star-label-small {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-left: 12px;
+    min-width: 60px;
+    text-align: right;
+}
+
+.feedback-submit {
+    margin: 16px auto 0;
+    min-width: 200px;
+}
+
+.feedback-success {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    animation: fadeIn 0.5s ease;
+}
+
+.feedback-success-icon {
+    font-size: 2.5rem;
+    margin-bottom: 4px;
+}
+
+.feedback-success-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent-green);
+}
+
+.feedback-success-sub {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ── Premium Feedback Card ── */
+.fb-card {
+    width: 100%;
+}
+
+.fb-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.fb-title-icon {
+    font-size: 1.6rem;
+}
+
+.fb-title-text {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.fb-title-sub {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* ── Progress Bar ── */
+.fb-progress-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.fb-progress-bar {
+    flex: 1;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.fb-progress-fill {
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 4px;
+    transition: width 0.4s ease;
+}
+
+.fb-progress-text {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+/* ── Form Layout ── */
+.fb-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.fb-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fb-section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.fb-ratings {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.fb-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(59, 130, 246, 0.15), transparent);
+    margin: 2px 0;
+}
+
+/* ── Rating Rows ── */
+.fb-rating-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: all 0.2s;
+}
+
+.fb-row-done {
+    background: rgba(16, 185, 129, 0.03);
+    border-color: rgba(16, 185, 129, 0.08);
+}
+
+.fb-rating-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.fb-rating-emoji {
+    font-size: 1rem;
+}
+
+.fb-rating-label {
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    flex: 1;
+}
+
+.fb-rating-badge {
+    font-size: 0.68rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.2s;
+}
+
+.fb-badge-active {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* ── Star Buttons ── */
+.fb-stars {
+    display: flex;
+    gap: 4px;
+}
+
+.fb-star {
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    color: rgba(255, 255, 255, 0.12);
+    font-size: 1.15rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fb-star:hover {
+    background: rgba(251, 191, 36, 0.08);
+    border-color: rgba(251, 191, 36, 0.25);
+    transform: scale(1.12);
+}
+
+.fb-star-lit {
+    color: #fbbf24;
+    background: rgba(251, 191, 36, 0.1);
+    border-color: rgba(251, 191, 36, 0.3);
+    text-shadow: 0 0 8px rgba(251, 191, 36, 0.4);
+}
+
+/* ── Textarea ── */
+.fb-textarea-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.fb-textarea-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.fb-optional {
+    font-weight: 400;
+    color: var(--text-muted);
+    font-size: 0.72rem;
+}
+
+.fb-textarea {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    padding: 10px 14px;
+    font-size: 0.86rem;
+    font-family: inherit;
+    resize: vertical;
+    transition: border-color 0.2s;
+}
+
+.fb-textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.fb-textarea:focus {
+    outline: none;
+    border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* ── Submit ── */
+.fb-submit {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 0.88rem;
+    font-weight: 700;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    font-family: var(--font-sans);
+}
+
+.fb-submit:hover:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+}
+
+.fb-submit:disabled {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-muted);
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* ── Success State ── */
+.fb-success {
+    text-align: center;
+    padding: 28px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.fb-success-check {
+    animation: scaleIn 0.5s ease;
+}
+
+.fb-success-icon {
+    font-size: 2.5rem;
+    margin-bottom: 12px;
+}
+
+.fb-success-title {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.fb-success-sub {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.fb-success-closing {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* ── Feedback Overlay (End Navigation) ── */
+.feedback-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(5, 8, 22, 0.9);
+    backdrop-filter: blur(16px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.feedback-overlay-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-xl);
+    padding: 0;
+    max-width: 480px;
+    width: 90%;
+    box-shadow: var(--shadow-xl);
+    animation: slideUp 0.4s var(--ease-out-expo);
+    overflow: hidden;
+}
+
+.feedback-overlay-header {
+    text-align: center;
+    padding: 28px 24px 16px;
+}
+
+.feedback-overlay-header h2 {
+    font-size: 1.4rem;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+}
+
+.feedback-overlay-header p {
+    color: var(--text-secondary);
+    font-size: 0.92rem;
+}
+
+.feedback-overlay-card .glass-card {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* ============================================================
+   Light Theme Overrides – Feedback
+   ============================================================ */
+[data-theme="light"] .fb-progress-bar {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .fb-star {
+    border-color: rgba(0, 0, 0, 0.08);
+    background: rgba(0, 0, 0, 0.02);
+    color: rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .fb-textarea {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="light"] .fb-rating-badge {
+    background: rgba(0, 0, 0, 0.04);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .fb-submit:disabled {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .feedback-overlay {
+    background: rgba(0, 0, 0, 0.3);
+}

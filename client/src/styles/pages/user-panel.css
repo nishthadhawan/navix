@@ -1,0 +1,330 @@
+/* ============================================================
+   NaviX — User Panel Page (Admin)
+   Expandable user cards with saved routes detail
+   ============================================================ */
+
+/* ── User list container ── */
+.up-user-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+/* ── User card ── */
+.up-user-card {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    transition: background 0.2s;
+}
+
+.up-user-card:last-child {
+    border-bottom: none;
+}
+
+.up-user-card:hover {
+    background: rgba(59, 130, 246, 0.03);
+}
+
+.up-user-card--expanded {
+    background: rgba(59, 130, 246, 0.04);
+}
+
+/* ── User row (clickable header) ── */
+.up-user-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    cursor: pointer;
+    gap: 16px;
+}
+
+.up-user-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+    flex: 1;
+}
+
+.up-user-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.up-user-name {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.up-admin-badge {
+    font-size: 0.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.15), rgba(245, 158, 11, 0.15));
+    color: #fbbf24;
+    border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+.up-user-meta {
+    font-size: 0.74rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.up-user-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+/* ── Delete button ── */
+.up-delete-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    border: 1px solid rgba(239, 68, 68, 0.15);
+    background: rgba(239, 68, 68, 0.06);
+    color: #ef4444;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.up-delete-btn:hover {
+    background: rgba(239, 68, 68, 0.12);
+    border-color: rgba(239, 68, 68, 0.3);
+    transform: scale(1.05);
+}
+
+.up-delete-btn--confirm {
+    width: auto;
+    padding: 0 12px;
+    background: rgba(239, 68, 68, 0.15);
+    border-color: rgba(239, 68, 68, 0.4);
+    animation: up-pulse 1s ease infinite;
+}
+
+@keyframes up-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.15); }
+    50% { box-shadow: 0 0 0 5px rgba(239, 68, 68, 0); }
+}
+
+.up-delete-spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(239, 68, 68, 0.2);
+    border-top-color: #ef4444;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+/* ── Chevron ── */
+.up-chevron {
+    display: flex;
+    align-items: center;
+    color: var(--text-muted);
+    transition: transform 0.25s ease;
+}
+
+.up-chevron--open {
+    transform: rotate(90deg);
+}
+
+/* ── Expanded routes list ── */
+.up-routes-list {
+    padding: 0 20px 16px 68px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    animation: up-slideDown 0.25s ease;
+}
+
+@keyframes up-slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.up-routes-empty {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 16px;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 10px;
+    border: 1px dashed rgba(255, 255, 255, 0.08);
+}
+
+/* ── Individual route item ── */
+.up-route-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    transition: all 0.15s;
+}
+
+.up-route-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(59, 130, 246, 0.1);
+}
+
+.up-route-num {
+    width: 24px;
+    height: 24px;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.04);
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.up-route-body {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.up-route-endpoints {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.up-route-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 2px solid;
+}
+
+.up-dot-start {
+    background: rgba(16, 185, 129, 0.2);
+    border-color: #10b981;
+}
+
+.up-dot-end {
+    background: rgba(59, 130, 246, 0.2);
+    border-color: #3b82f6;
+}
+
+.up-route-place {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.up-route-arrow {
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    flex-shrink: 0;
+}
+
+.up-route-meta {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    flex-wrap: wrap;
+}
+
+.up-route-sep {
+    opacity: 0.4;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 700px) {
+    .up-routes-list {
+        padding-left: 20px;
+    }
+
+    .up-route-endpoints {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+    }
+
+    .up-route-arrow {
+        display: none;
+    }
+
+    .up-route-meta {
+        flex-wrap: wrap;
+    }
+
+    .up-user-row {
+        padding: 14px 16px;
+    }
+
+    .up-delete-btn--confirm {
+        font-size: 0.65rem;
+    }
+}
+
+/* ============================================================
+   Light Theme Overrides
+   ============================================================ */
+[data-theme="light"] .up-user-card {
+    border-bottom-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .up-user-card:hover,
+[data-theme="light"] .up-user-card--expanded {
+    background: rgba(59, 130, 246, 0.03);
+}
+
+[data-theme="light"] .up-route-item {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .up-route-item:hover {
+    background: rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="light"] .up-route-num {
+    background: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .up-routes-empty {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,126 @@
+/* ============================================================
+   NaviX — Safety Dashboard Page
+   ============================================================ */
+
+.safety-controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.safety-search-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-sm);
+    padding: 0 14px;
+    transition: border-color 0.2s;
+}
+
+.safety-search-wrap:focus-within {
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.safety-search-icon {
+    font-size: 0.9rem;
+    margin-right: 10px;
+    opacity: 0.5;
+}
+
+.safety-search {
+    flex: 1;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 0.88rem;
+    font-family: inherit;
+    padding: 12px 0;
+    outline: none;
+}
+
+.safety-search::placeholder {
+    color: var(--text-muted);
+}
+
+.safety-state-filter {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-size: 0.85rem;
+    font-family: inherit;
+    padding: 10px 16px;
+    min-width: 180px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    appearance: auto;
+}
+
+.safety-state-filter:focus {
+    border-color: rgba(59, 130, 246, 0.4);
+    outline: none;
+}
+
+.safety-state-filter option {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.safety-score-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-width: 130px;
+}
+
+.safety-badge {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 12px;
+    border: 1px solid;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.safety-score-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.safety-score-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+@media (max-width: 768px) {
+    .safety-controls {
+        flex-direction: column;
+    }
+
+    .safety-state-filter {
+        min-width: 100%;
+    }
+}
+
+/* ============================================================
+   Light Theme Overrides – Safety Dashboard
+   ============================================================ */
+[data-theme="light"] .safety-search-wrap {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="light"] .safety-state-filter {
+    background: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="light"] .safety-score-bar {
+    background: rgba(0, 0, 0, 0.06);
+}

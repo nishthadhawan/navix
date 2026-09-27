@@ -1,0 +1,77 @@
+/* ============================================================
+   NaviX — Loading & Spinner Components (Premium)
+   ============================================================ */
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid rgba(255, 255, 255, 0.15);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* ── Home Loading ── */
+.home-loading {
+  margin-top: 24px;
+}
+
+.loading-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 28px;
+  gap: 20px;
+  animation: fadeIn 0.3s ease;
+}
+
+.loading-overlay .large-spinner {
+  width: 52px;
+  height: 52px;
+  border: 3px solid rgba(59, 130, 246, 0.1);
+  border-top-color: var(--accent-blue);
+  border-radius: 50%;
+  animation: spin 0.85s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.3));
+}
+
+.loading-overlay p {
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: -0.3px;
+}
+
+.loading-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.loading-step {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.loading-step.active {
+  color: var(--accent-cyan);
+  background: rgba(59, 130, 246, 0.06);
+  font-weight: 500;
+}
+
+/* ============================================================
+   Light Theme Overrides – Loading
+   ============================================================ */
+[data-theme="light"] .spinner {
+    border-color: rgba(0, 0, 0, 0.1);
+    border-top-color: var(--accent-blue);
+}

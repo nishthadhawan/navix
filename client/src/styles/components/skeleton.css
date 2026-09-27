@@ -1,0 +1,329 @@
+/* ============================================================
+   NaviX — Skeleton Loading Screens (Premium)
+   ============================================================ */
+
+/* ── Shimmer animation ── */
+@keyframes skeleton-shimmer {
+    0% { background-position: -400px 0; }
+    100% { background-position: 400px 0; }
+}
+
+/* ── Base skeleton block ── */
+.skel {
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0.04) 0%,
+        rgba(255, 255, 255, 0.08) 40%,
+        rgba(255, 255, 255, 0.04) 80%
+    );
+    background-size: 400px 100%;
+    animation: skeleton-shimmer 1.8s ease-in-out infinite;
+    border-radius: 8px;
+}
+
+/* ── Shape helpers ── */
+.skel-circle {
+    border-radius: 50%;
+}
+
+.skel-pill {
+    border-radius: 20px;
+}
+
+/* ============================================================
+   Route Page Skeleton
+   ============================================================ */
+
+.route-skeleton {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    animation: fadeIn 0.3s ease;
+}
+
+/* ── Skeleton Top Bar ── */
+.route-skel-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 18px;
+    background: rgba(5, 10, 25, 0.9);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+.route-skel-topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.route-skel-logo {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.route-skel-brand {
+    width: 56px;
+    height: 14px;
+}
+
+.route-skel-stats {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-left: 16px;
+}
+
+.route-skel-stat {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.route-skel-stat-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.route-skel-stat-text {
+    height: 12px;
+}
+
+.route-skel-topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.route-skel-btn {
+    height: 34px;
+    border-radius: 10px;
+}
+
+/* ── Skeleton Map Body ── */
+.route-skel-body {
+    flex: 1;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+}
+
+.route-skel-map {
+    flex: 1;
+    background: rgba(10, 14, 26, 0.6);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Simulated map grid lines */
+.route-skel-map::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.5;
+}
+
+/* Simulated route line */
+.route-skel-map::after {
+    content: '';
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    width: 70%;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 229, 255, 0.15) 20%,
+        rgba(0, 229, 255, 0.25) 50%,
+        rgba(0, 229, 255, 0.15) 80%,
+        transparent
+    );
+    border-radius: 4px;
+    transform: rotate(-8deg);
+    animation: skeleton-shimmer 2.5s ease-in-out infinite;
+    background-size: 400px 100%;
+}
+
+/* Fake marker dots on the map */
+.route-skel-marker {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.route-skel-marker.start {
+    width: 18px;
+    height: 18px;
+    top: 35%;
+    left: 14%;
+    background: rgba(16, 185, 129, 0.2);
+    border-color: rgba(16, 185, 129, 0.3);
+}
+
+.route-skel-marker.end {
+    width: 18px;
+    height: 18px;
+    top: 27%;
+    right: 16%;
+    background: rgba(239, 68, 68, 0.2);
+    border-color: rgba(239, 68, 68, 0.3);
+}
+
+.route-skel-marker.mid {
+    width: 12px;
+    height: 12px;
+    top: 32%;
+    left: 48%;
+    background: rgba(245, 158, 11, 0.2);
+    border-color: rgba(245, 158, 11, 0.3);
+}
+
+/* ── Skeleton Side Panel ── */
+.route-skel-panel {
+    width: 320px;
+    flex-shrink: 0;
+    background: rgba(5, 10, 25, 0.85);
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 20px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.route-skel-panel-title {
+    width: 120px;
+    height: 16px;
+    margin-bottom: 4px;
+}
+
+.route-skel-direction {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.route-skel-dir-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+}
+
+.route-skel-dir-lines {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.route-skel-dir-line {
+    height: 10px;
+}
+
+/* ── Floating zoom control skeleton ── */
+.route-skel-zoom {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.route-skel-zoom-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 0;
+    background: rgba(8, 15, 35, 0.8);
+}
+
+/* ── Centered loading label ── */
+.route-skel-label {
+    position: absolute;
+    bottom: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(5, 10, 25, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+    padding: 10px 20px;
+    backdrop-filter: blur(16px);
+    z-index: 10;
+}
+
+.route-skel-label .spinner {
+    width: 16px;
+    height: 16px;
+    border-width: 2px;
+}
+
+.route-skel-label span {
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+}
+
+/* ── Responsive: hide side panel on mobile ── */
+@media (max-width: 768px) {
+    .route-skel-panel {
+        display: none;
+    }
+
+    .route-skel-stats {
+        display: none;
+    }
+
+    .route-skel-topbar-right .route-skel-btn:nth-child(n+3) {
+        display: none;
+    }
+}
+
+/* ============================================================
+   Light Theme Overrides – Skeleton
+   ============================================================ */
+[data-theme="light"] .skel {
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.06) 0%,
+        rgba(0, 0, 0, 0.1) 40%,
+        rgba(0, 0, 0, 0.06) 80%
+    );
+    background-size: 400px 100%;
+}
+
+[data-theme="light"] .route-skel-topbar {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .route-skel-map {
+    background: rgba(240, 243, 248, 0.6);
+}
+
+[data-theme="light"] .route-skel-panel {
+    background: rgba(255, 255, 255, 0.92);
+    border-left-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .route-skel-label {
+    background: rgba(255, 255, 255, 0.92);
+    border-color: rgba(0, 0, 0, 0.06);
+}

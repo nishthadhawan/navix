@@ -1,0 +1,574 @@
+/* ============================================================
+   EmergencyPage — Premium Emergency Contact UI
+   Dark theme with red accent for urgency
+   ============================================================ */
+
+.emer-page {
+    min-height: 100vh;
+    background: var(--bg-primary);
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* ── Background Glows ── */
+.emer-bg-glow {
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(239, 68, 68, 0.06), transparent 70%);
+    top: -150px;
+    right: -100px;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.emer-bg-glow-2 {
+    background: radial-gradient(circle, rgba(59, 130, 246, 0.04), transparent 70%);
+    bottom: -200px;
+    left: -150px;
+    top: auto;
+    right: auto;
+}
+
+/* ── Loading ── */
+.emer-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    gap: 16px;
+    color: var(--text-muted);
+}
+
+/* ── Nav ── */
+.emer-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 24px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(8, 14, 32, 0.8);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.emer-nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.emer-nav-logo {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+.emer-nav-name {
+    font-size: 1rem;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.emer-back-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    transition: all 0.2s;
+}
+
+.emer-back-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+}
+
+/* ── Content ── */
+.emer-content {
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 32px 20px 40px;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.emer-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ── Hero ── */
+.emer-hero {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.emer-hero-icon {
+    font-size: 3rem;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 4px 16px rgba(239, 68, 68, 0.3));
+}
+
+.emer-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin: 0 0 8px;
+    letter-spacing: -0.5px;
+}
+
+.emer-subtitle {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+/* ── Card ── */
+.emer-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    margin-bottom: 16px;
+    transition: border-color 0.3s;
+}
+
+.emer-card:hover {
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.emer-card-sos {
+    border-color: rgba(239, 68, 68, 0.1);
+}
+
+.emer-card-sos:hover {
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+.emer-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+}
+
+.emer-card-desc {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0 0 14px;
+}
+
+/* ── Form ── */
+.emer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.emer-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.emer-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.emer-required {
+    color: #ef4444;
+}
+
+.emer-input {
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-size: 0.88rem;
+    font-family: var(--font-sans);
+    transition: all 0.2s;
+    outline: none;
+}
+
+.emer-input:focus {
+    border-color: rgba(239, 68, 68, 0.4);
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.08);
+}
+
+.emer-input-phone {
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.emer-error {
+    padding: 8px 12px;
+    background: rgba(239, 68, 68, 0.06);
+    border: 1px solid rgba(239, 68, 68, 0.12);
+    border-radius: var(--radius-sm);
+    color: #ef4444;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.emer-success {
+    padding: 8px 12px;
+    background: rgba(16, 185, 129, 0.06);
+    border: 1px solid rgba(16, 185, 129, 0.12);
+    border-radius: var(--radius-sm);
+    color: #10b981;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.emer-save-btn {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.3s;
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.25);
+}
+
+.emer-save-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(239, 68, 68, 0.35);
+}
+
+.emer-save-btn:active {
+    transform: translateY(0) scale(0.97);
+}
+
+.emer-save-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* ── Toggle ── */
+.emer-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    transition: all 0.3s;
+}
+
+.emer-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.emer-toggle-on {
+    border-color: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+}
+
+.emer-toggle-track {
+    width: 38px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    position: relative;
+    transition: background 0.3s;
+    flex-shrink: 0;
+}
+
+.emer-toggle-on .emer-toggle-track {
+    background: rgba(16, 185, 129, 0.3);
+}
+
+.emer-toggle-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--text-muted);
+    transition: all 0.3s;
+}
+
+.emer-toggle-on .emer-toggle-thumb {
+    left: 20px;
+    background: #10b981;
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+/* ── Shake Hint ── */
+.emer-shake-hint {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: rgba(16, 185, 129, 0.05);
+    border: 1px solid rgba(16, 185, 129, 0.1);
+    border-radius: var(--radius-sm);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    animation: fadeIn 0.3s ease;
+}
+
+.emer-shake-anim {
+    font-size: 1.4rem;
+    animation: shakeIcon 1.5s ease-in-out infinite;
+}
+
+@keyframes shakeIcon {
+    0%, 100% { transform: rotate(0deg); }
+    10% { transform: rotate(-15deg); }
+    20% { transform: rotate(15deg); }
+    30% { transform: rotate(-10deg); }
+    40% { transform: rotate(10deg); }
+    50% { transform: rotate(0deg); }
+}
+
+/* ── SOS Preview ── */
+.emer-sos-preview {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.emer-sos-demo-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4), 0 0 0 4px rgba(239, 68, 68, 0.1);
+    animation: sosPulseDemo 2s ease-in-out infinite;
+    flex-shrink: 0;
+}
+
+@keyframes sosPulseDemo {
+    0%, 100% { box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4), 0 0 0 4px rgba(239, 68, 68, 0.1); }
+    50% { box-shadow: 0 4px 20px rgba(239, 68, 68, 0.6), 0 0 0 8px rgba(239, 68, 68, 0.05); }
+}
+
+/* ── Test Call Button ── */
+.emer-test-btn {
+    padding: 10px 20px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.15);
+    border-radius: var(--radius-sm);
+    color: var(--accent-cyan);
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+}
+
+.emer-test-btn:hover {
+    background: rgba(59, 130, 246, 0.18);
+    transform: translateY(-1px);
+}
+
+/* ── How It Works ── */
+.emer-how {
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.emer-how-title {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0 0 16px;
+    text-align: center;
+}
+
+.emer-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.emer-step {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: var(--radius-sm);
+}
+
+.emer-step-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(239, 68, 68, 0.05));
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    font-size: 0.8rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.emer-step-text {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.emer-step-text strong {
+    color: var(--text-primary);
+}
+
+/* ── Footer ── */
+.emer-footer {
+    text-align: center;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    opacity: 0.6;
+    padding: 16px 0;
+}
+
+/* ── SOS Button (for RoutePage) ── */
+.sos-float-btn {
+    position: absolute;
+    top: 95px;
+    right: 14px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    border: none;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 24px rgba(239, 68, 68, 0.45), 0 0 0 4px rgba(239, 68, 68, 0.12);
+    animation: sosFloat 2.5s ease-in-out infinite;
+    transition: transform 0.2s;
+    font-family: var(--font-sans);
+}
+
+.sos-float-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 32px rgba(239, 68, 68, 0.55), 0 0 0 6px rgba(239, 68, 68, 0.15);
+}
+
+.sos-float-btn:active {
+    transform: scale(0.95);
+}
+
+@keyframes sosFloat {
+    0%, 100% {
+        box-shadow: 0 6px 24px rgba(239, 68, 68, 0.45), 0 0 0 4px rgba(239, 68, 68, 0.12);
+    }
+    50% {
+        box-shadow: 0 6px 24px rgba(239, 68, 68, 0.6), 0 0 0 8px rgba(239, 68, 68, 0.06);
+    }
+}
+
+@media (max-width: 600px) {
+    .sos-float-btn {
+        top: 85px;
+        right: 10px;
+        width: 42px;
+        height: 42px;
+        font-size: 0.58rem;
+    }
+}
+
+/* ── Light Theme ── */
+[data-theme="light"] .emer-nav {
+    background: rgba(255, 255, 255, 0.85);
+    border-bottom-color: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .emer-card {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .emer-input {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .emer-toggle-btn {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .emer-step {
+    background: rgba(0, 0, 0, 0.02);
+    border-color: rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .emer-back-btn {
+    background: rgba(0, 0, 0, 0.03);
+    border-color: rgba(0, 0, 0, 0.06);
+}

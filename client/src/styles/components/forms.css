@@ -1,0 +1,324 @@
+/* ============================================================
+   NaviX — Forms, Inputs & Autocomplete
+   ============================================================ */
+
+/* ── Route Form ── */
+.route-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: fit-content;
+}
+
+.form-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.form-title .icon {
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: 10px;
+    font-size: 1.2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: var(--glass-overlay);
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-sm);
+    padding: 13px 16px;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    transition: var(--transition);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--text-muted);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px var(--accent-blue-glow);
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+}
+
+.form-group select option {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+/* ── Submit Button ── */
+.btn-submit {
+    background: var(--gradient-primary);
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: 14px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: var(--transition);
+    font-family: var(--font-sans);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 4px;
+}
+
+.btn-submit:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-submit:active:not(:disabled) {
+    transform: translateY(0) scale(0.98);
+}
+
+.btn-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ── Autocomplete Dropdown ── */
+.autocomplete-container {
+    position: relative;
+}
+
+.autocomplete-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin-top: 8px;
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index: 1000;
+    list-style: none;
+    padding: 8px 0;
+    max-height: 250px;
+    overflow-y: auto;
+    animation: fadeInDown 0.2s ease;
+}
+
+.autocomplete-dropdown::-webkit-scrollbar {
+    width: 6px;
+}
+
+.autocomplete-dropdown::-webkit-scrollbar-thumb {
+    background: var(--glass-scrollbar);
+    border-radius: 10px;
+}
+
+.autocomplete-dropdown li {
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    border-bottom: 1px solid var(--border-subtle);
+    transition: background 0.2s ease, padding-left 0.2s ease;
+}
+
+.autocomplete-dropdown li:last-child {
+    border-bottom: none;
+}
+
+.autocomplete-dropdown li:hover {
+    background: rgba(0, 229, 255, 0.1);
+    padding-left: 20px;
+}
+
+.ac-icon {
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.ac-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.ac-text strong {
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.ac-text small {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+/* ── Input with Button (Locate) ── */
+.input-with-btn {
+    display: flex;
+    gap: 8px;
+    align-items: stretch;
+}
+
+.input-with-btn input {
+    flex: 1;
+}
+
+.locate-btn {
+    width: 44px;
+    flex-shrink: 0;
+    border: 1px solid var(--border-glass);
+    border-radius: var(--radius-sm);
+    background: var(--glass-overlay);
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.locate-btn:hover {
+    background: rgba(59, 130, 246, 0.12);
+    border-color: rgba(59, 130, 246, 0.4);
+}
+
+.locate-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ── Admin Link Button ── */
+.admin-link-btn {
+    margin-top: 12px;
+    padding: 8px 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent-cyan);
+    border: 1px solid rgba(59, 130, 246, 0.25);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.admin-link-btn:hover {
+    background: rgba(59, 130, 246, 0.2);
+    transform: translateY(-1px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+    .route-form {
+        gap: 16px;
+    }
+
+    .form-title {
+        font-size: 1rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 11px 14px;
+        font-size: 0.88rem;
+    }
+
+    .btn-submit {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    .autocomplete-dropdown {
+        max-height: 200px;
+    }
+
+    .autocomplete-dropdown li {
+        padding: 10px 14px;
+        gap: 10px;
+    }
+
+    .ac-text strong {
+        font-size: 0.88rem;
+    }
+
+    .locate-btn {
+        width: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-title {
+        font-size: 0.92rem;
+        gap: 8px;
+    }
+
+    .form-title .icon {
+        width: 32px;
+        height: 32px;
+        font-size: 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.72rem;
+    }
+
+    .form-group input,
+    .form-group select {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+    }
+
+    .btn-submit {
+        padding: 11px 16px;
+        font-size: 0.85rem;
+    }
+}
