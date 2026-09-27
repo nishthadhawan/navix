@@ -10,7 +10,7 @@ const ORS_API_KEY = 'eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6IjFmNzM
 const ORS_AUTOCOMPLETE_URL = 'https://api.openrouteservice.org/geocode/autocomplete';
 
 const API_BASE_URL =
-    import.meta.env.VITE_API_URL || "https://navix-backend-uly4.onrender.com";
+    import.meta.env.VITE_API_URL || "https://navix-s9yb.onrender.com";
 
 // Debounce helper
 function useDebounce(value, delay) {

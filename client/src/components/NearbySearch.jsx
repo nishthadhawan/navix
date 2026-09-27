@@ -9,7 +9,7 @@ import axios from 'axios';
 
 const ORS_API_KEY = 'eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6IjFmNzM0OWVhNWQxOTQ1MDJhOGVlMmVkNDBhZjM0NzFmIiwiaCI6Im11cm11cjY0In0=';
 const ORS_AUTOCOMPLETE_URL = 'https://api.openrouteservice.org/geocode/autocomplete';
-const API_URL = 'https://navix-backend-uly4.onrender.com/api';
+const API_URL = 's/api';
 
 // Debounce hook
 function useDebounce(value, delay) {

@@ -10,7 +10,7 @@ import SavedPaths from './SavedPaths';
 import { useAuth } from '../context/AuthContext';
 import Icons from './Icons';
 
-const API_URL = 'https://navix-backend-uly4.onrender.com/api';
+const API_URL = 'https://navix-s9yb.onrender.com/api';
 
 export default function SavedPathsPage() {
     const [isLoading, setIsLoading] = useState(false);

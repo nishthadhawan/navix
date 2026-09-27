@@ -14,7 +14,7 @@ import axios from 'axios';
 import 'leaflet/dist/leaflet.css';
 
 const API_URL =
-    import.meta.env.VITE_API_URL || 'https://navix-backend-uly4.onrender.com';
+    import.meta.env.VITE_API_URL || 'https://navix-s9yb.onrender.com';
 
 // ── Marker Icons ─────────────────────────────────────────────
 

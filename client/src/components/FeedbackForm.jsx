@@ -7,7 +7,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-const API_URL = 'https://navix-backend-uly4.onrender.com/api';
+const API_URL = 'https://navix-s9yb.onrender.com/api';
 
 const ratingLabels = ['', 'Poor', 'Fair', 'Good', 'Great', 'Excellent'];
 const ratingColors = ['', '#ef4444', '#f97316', '#eab308', '#22c55e', '#10b981'];

@@ -10,7 +10,7 @@ import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
 import Icons from './Icons';
 
-const API_URL = 'https://navix-backend-uly4.onrender.com/api';
+const API_URL = 'https://navix-s9yb.onrender.com/api';
 const ADMIN_ID = '69c2e46f3e2c7b09c8291257';
 
 export default function UserPanel() {

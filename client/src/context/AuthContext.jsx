@@ -7,7 +7,7 @@ import { createContext, useContext, useState, useEffect } from 'react';
 import axios from 'axios';
 
 const API_URL =
-    import.meta.env.VITE_API_URL || 'https://navix-backend-uly4.onrender.com';
+    import.meta.env.VITE_API_URL || 'https://navix-s9yb.onrender.com';
 
 const AuthContext = createContext(null);
 
