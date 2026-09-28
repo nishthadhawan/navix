@@ -73,7 +73,7 @@ export default function IntroPage() {
 
             {/* Nav */}
             <nav className={`intro-nav ${visible ? 'intro-nav-visible' : ''}`}>
-                <a href="https://navix-frontend.onrender.com/" className="intro-nav-brand" style={{ textDecoration: 'none', color: 'inherit' }}>
+                <a href="https://navix-navigator.onrender.com" className="intro-nav-brand" style={{ textDecoration: 'none', color: 'inherit' }}>
                     <img src="/logo.png" alt="NaviX" className="intro-nav-logo" />
                     <span className="intro-nav-name">NaviX</span>
                 </a>

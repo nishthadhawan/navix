@@ -30,7 +30,7 @@ const PORT = process.env.PORT || 5000;
 const CORS_ORIGINS = [
     'http://localhost:5173',
     'http://localhost:3000',
-    'https://navix-frontend.onrender.com'
+    'https://navix-navigator.onrender.com'
 ];
 
 // --- Middleware ---
