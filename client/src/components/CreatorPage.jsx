@@ -74,7 +74,7 @@ export default function CreatorPage() {
                     </div>
 
                     <h1 className="creator-name">
-                        Nishtha <span className="creator-name-accent">Kumar </span> Yadav
+                        Nishtha <span className="creator-name-accent"> </span> Dhawan
                     </h1>
 
                     <p className="creator-role">
